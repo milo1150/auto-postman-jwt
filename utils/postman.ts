@@ -14,8 +14,8 @@ interface PostmanEnvironmentList {
 interface EnvironmentMeta {
   id: string
   name: string
-  createdAt: string // ISO date string
-  updatedAt: string // ISO date string
+  createdAt: string
+  updatedAt: string
   owner: string
   uid: string
   isPublic: boolean
@@ -37,6 +37,7 @@ interface PostmanEnvironment {
   updatedAt: string
   values: PostmanVariable[]
 }
+
 interface GetEnvResponse {
   environment: PostmanEnvironment
 }
