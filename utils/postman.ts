@@ -66,7 +66,7 @@ export async function updatePostmanJwt(jwtToken: string) {
       },
     })
     .then((res) => {
-      console.log('Postman Environments:', res.data.environments)
+      // console.log('Postman Environments:', res.data.environments)
       return res.data.environments
     })
 
@@ -89,7 +89,7 @@ export async function updatePostmanJwt(jwtToken: string) {
     })
     .then((res) => {
       console.log('Headers', res.headers)
-      console.log('Postman Environment by UID:', res.data.environment)
+      // console.log('Postman Environment by UID:', res.data.environment)
       return res.data.environment
     })
 
@@ -104,7 +104,7 @@ export async function updatePostmanJwt(jwtToken: string) {
     environmentValues = environmentValues.filter(
       (v) => v.key !== POSTMAN_JWT_VARIABLE
     )
-    console.log('Remove JWT from environments', environmentValues)
+    console.log('Remove JWT from environments')
     await updatePostmanEnvironments(
       envUID,
       environmentUIDResponse,
@@ -124,7 +124,7 @@ export async function updatePostmanJwt(jwtToken: string) {
     type: 'default',
   }
   environmentValues.push(newJwtTokenVariable)
-  console.log('Create new JWT', environmentValues)
+  console.log('Create new JWT')
   await updatePostmanEnvironments(
     envUID,
     environmentUIDResponse,
