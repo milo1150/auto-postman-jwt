@@ -1,6 +1,6 @@
 #!/bin/bash
 
-interval=5
+interval=100 # second unit
 
 while true; do
 	echo "Running Playwright test at $(date)..."
