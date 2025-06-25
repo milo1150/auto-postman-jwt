@@ -25,6 +25,8 @@ interface PostmanVariable {
   key: string
   value: any
   type: string
+  current_value: any
+  current: any
   enabled: boolean
 }
 
@@ -120,8 +122,10 @@ export async function updatePostmanJwt(jwtToken: string) {
   const newJwtTokenVariable: PostmanVariable = {
     key: POSTMAN_JWT_VARIABLE,
     value: jwtToken,
+    current_value: jwtToken,
+    current: jwtToken,
     enabled: true,
-    type: 'default',
+    type: 'secret',
   }
   environmentValues.push(newJwtTokenVariable)
   console.log('Create new JWT')
